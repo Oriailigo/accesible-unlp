@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="botones-v1.css">
+  <title>Accesibilidad web | ¿Botón o no botón?, esa es la cuestión </title>
+</head>
+
+<body>
+  <header>
+    <img width="512" height="156" 
+    src="https://www.info.unlp.edu.ar/wp-content/uploads/2019/05/logo-info.png" 
+    sizes="(max-width: 512px) 100vw, 512px">
+    <h1>Accesible, que no es poco!! - Botones </h1>  
+  </header>
+  <div>
+    <img src="./pexels-600w.jpg">
+  </div>
+  <h2> ¿Botón o no botón?💀, esa es la cuestión </h2>
+  <div>
+    <button class="btn"> OPCIÓN A </button>
+    <a class="btn"> OPCIÓN B </a>
+    <p class="btn"> OPCIÓN C </p>
+  </div>
+  <output></output>
+  <footer style="padding: 3rem 0">
+    <p>© 2023 | Todos los derechos reservados. | Oriana Ailigo. </p>
+  </footer>
+  <script>
+    const options = document.querySelectorAll('.btn');
+    const output = document.querySelector('output');
+    options.forEach(opt => {
+      opt.addEventListener('click', evt => {
+        output.innerHTML = `${evt.target.innerHTML} seleccionado !!!`
+      })
+    })
+
+    function clearOutput() {
+      const output = document.querySelectorAll('output');
+      output.forEach(elem => elem.innerHTML = '')
+    }
+
+  </script>
+
+</body>
+
+</html>

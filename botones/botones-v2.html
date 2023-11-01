@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="botones-v2.css">
+  <title>Accesibilidad web</title>
+</head>
+
+<body>
+  <header >
+    <img width="512" height="156" tabindex="0"
+    src="https://www.info.unlp.edu.ar/wp-content/uploads/2019/05/logo-info.png" 
+     alt="Logo de la facultad de informática."
+     aria-label="Logo de la facultad de informática."
+     
+      loading="lazy"     
+      sizes="(max-width: 512px) 100vw, 512px">
+    <h1 tabindex="0">Accesible, que no es poco!! - Botones</h1>
+  </header>
+  <main>
+    <picture >
+      <source srcset="./pexels-1280w.jpg" media="(min-width: 600px)">
+      <img src="./pexels-600w.jpg" alt="Imagen que contiene etiquetas de html."
+      aria-label="Imagen que contiene etiquetas de html."
+      tabindex="0">
+    </picture>
+    <h2 tabindex="0">¿Botón o no botón? <span aria-hidden="true">💀</span>, esa es la cuestión </h2>
+    <ul>
+      <li>
+        <button id="A" type="button" class="btn"> OPCIÓN A </button>
+      </li>
+      <li>
+        <button id="B" type="button" class="btn"> OPCIÓN B </button>
+      </li>
+      <li>
+        <button id="C" type="button" class="btn"> OPCIÓN C </button>
+      </li>
+    </ul>
+
+    <output name="action_result" for="A B C" aria-live="polite">
+    </output>
+  </main>
+  <footer style="padding: 3rem 0">
+    <p>© 2023 | Todos los derechos reservados. | Oriana Ailigo. </p>
+  </footer>
+  <script>
+    const options = document.querySelectorAll('.btn');
+    const output = document.querySelector('output');
+    options.forEach(opt => {
+      opt.addEventListener('click', evt => {
+        output.innerHTML = `${evt.target.innerHTML} seleccionado !!!`
+      })
+    })
+
+    function clearOutput() {
+      const output = document.querySelectorAll('output');
+      output.forEach(elem => elem.innerHTML = '')
+    }
+
+  </script>
+
+</body>
+
+</html>
